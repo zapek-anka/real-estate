@@ -1,0 +1,60 @@
+.nav {
+	display: inline-flex;
+	list-style-type: none;
+	margin: 0 0 0 -180px;
+	padding-left: 0;
+
+	&__link {
+		font-size: 12px;
+		line-height: 125%;
+		color: #2A353D;
+		opacity: 0.8;
+		text-decoration: none;
+	}
+
+	&__item {
+		margin-right: 36px;
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+	}
+}
+
+.header {
+
+	&__content {
+		padding: 25px 0;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__logo {
+		width: 123px;
+		display: flex;
+	}
+
+	&__icon {
+		max-width: 100%;
+	}
+
+	&__tel {
+		position: relative;
+		font-weight: 600;
+		display: flex;
+    	align-items: center;
+
+		&::after {
+			content: 'звонок бесплатный';
+		    position: absolute;
+		    left: 50%;
+		    white-space: nowrap;
+		    top: 15px;
+		    transform: translateX(-50%);
+		    font-size: 10px;
+		    line-height: 12px;
+			opacity: 0.5;
+		}
+	}
+}

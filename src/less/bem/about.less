@@ -1,0 +1,48 @@
+.about {
+    margin-bottom: 140px;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    color: white;
+    overflow-x: hidden;
+
+    &__text {
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        position: absolute;
+        width: 740px;
+        padding: 95px 100px 100px 210px;
+        background-color: #02C768;
+        box-sizing: border-box;
+        z-index: 3;
+    }
+
+    &__subtitle {
+        margin: 0 0 30px;
+        font-size: 30px;
+        line-height: 1.33;
+        font-weight: 500;
+    }
+
+    &__list {
+        margin: 0;
+        padding: 0;
+    }
+
+    &__item {
+        margin-bottom: 15px;
+        font-size: 20px;
+        line-height: 1;
+    }
+
+    &__img-wrap {
+        width: 890px;
+        overflow: hidden;
+        border-radius: 45px 0 0 220px;
+    }
+
+    &__img {
+        max-width: 100%;
+    }
+}
