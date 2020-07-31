@@ -37,6 +37,7 @@
     }
 
     &__link {
+        padding-left: 42px;
         position: relative;
         font-weight: 500;
         font-size: 18px;
@@ -44,6 +45,57 @@
         color: #2A353D;
         opacity: 0.8;
         text-decoration: none;
+
+        &::before {
+            content: '';
+            top: -5px;
+            position: absolute;
+            display: block;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            background-color: #02C768;
+        }
+    }
+
+    &__h-list-item {
+        &:first-of-type {
+            .contacts__link {
+                &::after {
+                    content: '';
+                    top: 50%;
+                    margin-top: -8px;
+                    left: 9px;
+                    position: absolute;
+                    display: block;
+                    width: 15px;
+                    height: 15px;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-image: url('../../icon/at.svg');
+                }
+            }
+        }
+
+        &:last-of-type {
+            .contacts__link {
+                &::after {
+                    content: '';
+                    top: 50%;
+                    margin-top: -8px;
+                    left: 9px;
+                    position: absolute;
+                    display: block;
+                    width: 14px;
+                    height: 14px;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-image: url('../../icon/phone.svg');
+                }
+            }
+        }
     }
 
     &__name {
@@ -72,11 +124,41 @@
     }
 
     &__text {
+        position: relative;
+        padding-left: 45px;
         font-weight: 500;
         font-size: 14px;
         line-height: 1.43;
         color: #2A353D;
         opacity: 0.8;
+
+        &::before {
+            content: '';
+            top: 50%;
+            margin-top: -16px;
+            left: 0;
+            position: absolute;
+            display: block;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            background-color: #02C768;
+        }
+
+        &::after {
+            content: '';
+            top: 50%;
+            margin-top: -8px;
+            left: 9px;
+            position: absolute;
+            display: block;
+            width: 14px;
+            height: 17px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-image: url('../../icon/mark.svg');
+        }
     }
 
     &__props {

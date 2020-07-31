@@ -15,14 +15,6 @@
         margin-bottom: 30px;
     }
 
-    &__item {
-        width: 340px;
-        padding: 53px 36px 42px;
-        box-sizing: border-box;
-        background-color: #02C768;
-        border-radius: 15px 0;
-    }
-
     &__subtitle {
         position: relative;
         margin-bottom: 12px;
@@ -44,6 +36,60 @@
             border-radius: 50%;
             border: 2px solid rgba(42, 53, 61, 0.1);
             box-shadow: 0px 7px 12px rgba(12, 20, 61, 0.14);
+        }
+
+        &::after {
+            content: '';
+            left: 50%;
+            transform: translateX(-50%);
+            position: absolute;
+            display: block;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+
+    }
+
+    &__item {
+        width: 340px;
+        padding: 53px 36px 42px;
+        box-sizing: border-box;
+        background-color: #02C768;
+        border-radius: 15px 0;
+
+        &:first-of-type {
+            .advantages__subtitle {
+                &::after {
+                    width: 42px;
+                    height: 42px;
+                    top: 17px;
+                    background-image: url('../../icon/timer.svg');
+                }
+            }
+        }
+
+        &:nth-of-type(2) {
+            .advantages__subtitle {
+                &::after {
+                    width: 32px;
+                    height: 39px;
+                    top: 19px;
+                    background-image: url('../../icon/initial/shield.svg');
+                }
+            }
+        }
+
+        &:nth-of-type(3) {
+            .advantages__subtitle {
+                &::after {
+                    width: 39px;
+                    height: 35px;
+                    top: 21px;
+                    background-image: url('../../icon/initial/home.svg');
+                }
+            }
         }
     }
 

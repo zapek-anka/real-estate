@@ -49,13 +49,27 @@ body {
         &:last-of-type {
             &::before {
                 content: '';
-                // background-image: url('../../icon/Vector 13.svg');
+                background-image: url('../../icon/tick.svg');
+                background-repeat: no-repeat;
+                background-position: center;
             }
         }
 
         &::after {
-            // content: url('./../icon/arrow.png');
+            content: '';
             position: absolute;
+            display: block;
+            width: 236px;
+            height: 16px;
+            top: 24px;
+            left: 93px;
+            background-image: url('../../icon/arrow.svg');
+        }
+
+        &:nth-of-type(3n) {
+            &::after {
+                display: none;
+            }
         }
     }
 }

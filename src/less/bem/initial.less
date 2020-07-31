@@ -90,6 +90,59 @@
 	    border: 2px solid rgba(42, 53, 61, 0.1);
 	}
 
+	&::after {
+		content: '';
+		display: block;
+		position: absolute;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+
+	&:first-of-type {
+		&::after {
+			content: '';
+			top: -15px;
+			left: 46px;
+			width: 38px;
+			height: 34px;
+			background-image: url('../../icon/initial/home.svg');
+		}
+	}
+
+	&:nth-of-type(2) {
+		&::after {
+			content: '';
+			top: -14px;
+			left: 49px;
+			width: 32px;
+			height: 32px;
+			background-image: url('../../icon/initial/window.svg');
+		}
+	}
+
+	&:nth-of-type(3) {
+		&::after {
+			content: '';
+			top: -16px;
+			left: 48px;
+			width: 35px;
+			height: 35px;
+			background-image: url('../../icon/initial/question.svg');
+		}
+	}
+
+	&:nth-of-type(4) {
+		&::after {
+			content: '';
+			top: -14px;
+			left: 49px;
+			width: 32px;
+			height: 39px;
+			background-image: url('../../icon/initial/shield.svg');
+		}
+	}
+
 	&__text {
 		font-size: 14px;
 		line-height: 130%;

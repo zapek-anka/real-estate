@@ -73,6 +73,20 @@
             border-radius: 50%;
         }
 
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 7px;
+            top: 9px;
+            width: 18px;
+            height: 14px;
+            background-image: url('../../icon/tick.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
         &:last-of-type {
             margin-bottom: 0;
         }
