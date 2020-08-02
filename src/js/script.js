@@ -26,12 +26,14 @@ class RealEstate {
                 let modalId = btn.dataset.modal;
                 let modal = document.getElementById(modalId);
                 modal.classList.remove('m-hidden');
+                document.body.classList.add('no-scroll');
             });
         });
 
         this.modalClose.forEach((close) => {
             close.addEventListener('click', function (e) {
                 close.closest('.js-overlay').classList.add('m-hidden');
+                document.body.classList.remove('no-scroll');
             });
         });
     }

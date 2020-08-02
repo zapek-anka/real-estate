@@ -42,6 +42,7 @@
     }
 
     &__input {
+        font-family: 'Montserrat', Arial, sans-serif;
         font-size: 14px;
         width: 282px;
         line-height: 1.5;
@@ -110,6 +111,50 @@
             color: #2A353D;
             background-color: #fff;
             border: 1px solid rgba(0,0,0,0.3);
+        }
+    }
+
+    &__wrap {
+        display: flex;
+    }
+
+    &__slider {
+        width: 423px;
+        height: 380px;
+    }
+
+    &.m-scroll {
+        width: 871px;
+        height: calc(100vh - 30px);
+        overflow-y: auto;
+
+        .modal__form {
+            width: 267px;
+        }
+
+        .modal__btn {
+            margin-top: 15px;
+        }
+    }
+
+    &__bubble {
+        position: relative;
+        padding: 16px 19px 19px 22px;
+        background-color: #02C768;
+        border-radius: 5px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 1.29;
+        color: #FFFFFF;
+        text-decoration: none;
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #02C768;
+            transform: rotate(45deg);
         }
     }
 }

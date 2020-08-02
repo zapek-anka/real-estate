@@ -145,11 +145,13 @@ var RealEstate = /*#__PURE__*/function () {
         var modalId = btn.dataset.modal;
         var modal = document.getElementById(modalId);
         modal.classList.remove('m-hidden');
+        document.body.classList.add('no-scroll');
       });
     });
     this.modalClose.forEach(function (close) {
       close.addEventListener('click', function (e) {
         close.closest('.js-overlay').classList.add('m-hidden');
+        document.body.classList.remove('no-scroll');
       });
     });
   }
