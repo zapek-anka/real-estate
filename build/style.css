@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
   font-family: 'Montserrat', Arial, sans-serif;
 }
 .wrap {
@@ -819,5 +820,106 @@ body {
   font-size: 12px;
   line-height: 2;
   color: rgba(42, 53, 61, 0.5);
+}
+.modal {
+  width: 369px;
+  box-sizing: border-box;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 57px 43px 52px;
+  background-color: white;
+  border-radius: 5px;
+  z-index: 6;
+}
+.modal.m-hidden {
+  display: none;
+}
+.modal__title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1;
+  color: #2A353D;
+  margin: 0 0 60px;
+}
+.modal__overlay {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5;
+}
+.modal__overlay.m-hidden {
+  display: none;
+}
+.modal__form {
+  display: flex;
+  flex-direction: column;
+}
+.modal__input {
+  font-size: 14px;
+  width: 282px;
+  line-height: 1.5;
+  padding: 20px 0 10px;
+  color: #2a353d;
+  border: none;
+  border-bottom: 1px solid #2A353D;
+  outline: none;
+}
+.modal__input:placeholder {
+  color: rgba(42, 53, 61, 0.5);
+}
+.modal__btn {
+  margin: 50px 0 15px;
+  border: none;
+  border-radius: 10px 0;
+  padding: 15px 23px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1;
+  text-align: center;
+  color: #FFFFFF;
+  background-color: #F2994A;
+  cursor: pointer;
+}
+.modal__policies {
+  font-size: 10px;
+  line-height: 1.4;
+  color: rgba(42, 53, 61, 0.5);
+}
+.modal__link {
+  color: rgba(42, 53, 61, 0.5);
+}
+.modal__close {
+  display: block;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 30px;
+  right: 25px;
+  background-color: transparent;
+  border: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M6.50014 5.26265L10.8314 0.931396L12.0686 2.16865L7.73739 6.4999L12.0686 10.8311L10.8314 12.0684L6.50014 7.73714L2.16889 12.0684L0.931641 10.8311L5.26289 6.4999L0.931641 2.16865L2.16889 0.931396L6.50014 5.26265Z' fill='%232A353D'/%3E %3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.modal__text {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.36;
+  color: rgba(42, 53, 61, 0.7);
+}
+.modal.m-large {
+  width: 871px;
+}
+.modal.m-large .modal__btn {
+  width: 100%;
+  color: #2A353D;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.3);
 }
 

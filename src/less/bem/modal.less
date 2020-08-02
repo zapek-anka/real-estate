@@ -1,0 +1,115 @@
+.modal {
+    width: 369px;
+    box-sizing: border-box;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 57px 43px 52px;
+    background-color: white;
+    border-radius: 5px;
+    z-index: 6;
+
+    &.m-hidden {
+        display: none;
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 1;
+        color: #2A353D;
+        margin: 0 0 60px;
+    }
+
+    &__overlay {
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        position: fixed;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 5;
+
+        &.m-hidden {
+            display: none;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__input {
+        font-size: 14px;
+        width: 282px;
+        line-height: 1.5;
+        padding: 20px 0 10px;
+        color: #2a353d;
+        border: none;
+        border-bottom: 1px solid #2A353D;
+        outline: none;
+
+        &:placeholder {
+            color: rgba(42,53,61,0.5);
+        }
+    }
+
+    &__btn {
+        margin: 50px 0 15px;
+        border: none;
+        border-radius: 10px 0;
+        padding: 15px 23px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 1;
+        text-align: center;
+        color: #FFFFFF;
+        background-color: #F2994A;
+        cursor: pointer;
+    }
+
+    &__policies {
+        font-size: 10px;
+        line-height: 1.4;
+        color: rgba(42,53,61,0.5);
+    }
+
+    &__link {
+        color: rgba(42,53,61,0.5);
+    }
+
+    &__close {
+        display: block;
+        width: 12px;
+        height: 12px;
+        position: absolute;
+        top: 30px;
+        right: 25px;
+        background-color: transparent;
+        border: none;
+        background-image: url('../../icon/cross.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
+
+    &__text {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 1.36;
+        color: rgba(42,53,61,0.7);
+    }
+
+    &.m-large {
+        width: 871px;
+
+        .modal__btn {
+            width: 100%;
+            color: #2A353D;
+            background-color: #fff;
+            border: 1px solid rgba(0,0,0,0.3);
+        }
+    }
+}

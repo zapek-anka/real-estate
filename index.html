@@ -36,7 +36,7 @@
 				<div class="initial__text">
 					<h1 class="initial__title">Новая квартира в&nbsp;Санкт-Петербурге!</h1>
 					<p class="initial__subtitle">Сэкономьте до 500 000 ₽ при покупке онлайн</p>
-					<a href="" class="initial__link">Получить скидку</a>
+					<a href="" class="initial__link js-open-modal" data-modal="get-discount">Получить скидку</a>
 				</div>
 				<div class="initial__img-wrap">
 					<img src="/src/img/init.png" alt="" class="initial__img">
@@ -56,11 +56,11 @@
 			</li>
 			<li class="initial__block initial-item">
 				<p class="initial-item__text">Не знаете что ищете? Мы найдём квартиру вашей мечты за 1 день!</p>
-				<a href="" class="initial-item__link">Узнать больше</a>
+				<a href="#residentials" class="initial-item__link">Узнать больше</a>
 			</li>
 			<li class="initial__block initial-item">
 				<p class="initial-item__text">Гарантируем безопасность сделки.</p>
-				<a href="" class="initial-item__link">Узнать больше</a>
+				<a href="#guarantee" class="initial-item__link">Узнать больше</a>
 			</li>
 		</ul>
 	</section>
@@ -369,7 +369,7 @@
 						со скидкой до 1,5%
 					</li>
 				</ul>
-				<a href="" class="offers__link">
+				<a href="#residentials" class="offers__link">
 					Выбрать квартиру
 				</a>
 			</div>
@@ -393,7 +393,7 @@
 						даже познакомиться с соседями
 					</li>
 				</ul>
-				<a href="" class="offers__link">
+				<a href="" class="offers__link js-open-modal" data-modal="get-advice">
 					Попробовать бесплатно
 				</a>
 			</div>
@@ -434,7 +434,7 @@
 				</p>
 			</div>
 		</div>
-		<div class="advantages__guarantee guarantee">
+		<div class="advantages__guarantee guarantee" id="guarantee">
 			<p class="guarantee__title">Гарантия безопасности сделки</p>
 			<p class="guarantee__info">
 				Покупку квартиры можно осуществить онлайн
@@ -446,7 +446,7 @@
 				безопасность сделки и всегда может оформить
 				возврат денежных средств.
 			</p>
-			<a href="" class="offers__link">
+			<a href="/" class="offers__link js-open-modal" data-modal="about-online">
 				Подробнее об онлайн сделке
 			</a>
 		</div>
@@ -502,21 +502,21 @@
 			</a>
 			<ul class="nav footer__nav">
 				<li class="nav__item">
-					<a href="" class="nav__link">Жилые комплексы</a>
+					<a href="#residentials" class="nav__link">Жилые комплексы</a>
 				</li>
 				<li class="nav__item">
-					<a href="" class="nav__link">Как мы работаем</a>
+					<a href="#how-to" class="nav__link">Как мы работаем</a>
 				</li>
 				<li class="nav__item">
-					<a href="" class="nav__link">Онлайн-просмотр квартиры</a>
+					<a href="#online" class="nav__link">Онлайн-просмотр квартиры</a>
 				</li>
 				<li class="nav__item">
-					<a href="" class="nav__link">Контакты</a>
+					<a href="#contacts" class="nav__link">Контакты</a>
 				</li>
 			</ul>
 			<div class="footer__links-wrap">
 				<a href="tel:88005553535" type="tel" class="header__tel nav__link footer__tel">8 (800) 555-35-35</a>
-				<a href="/" class="footer__callback">Заказать звонок</a>
+				<a href="" class="footer__callback js-open-modal" data-modal="get-advice">Заказать звонок</a>
 			</div>
 		</div>
 		<div class="footer__copyright">
@@ -527,10 +527,55 @@
 		</div>
 	</footer>
 	<button class="js-go-up scroll-top"></button>
-	<div class="modal" id="modal">
-  <!-- modal stuff -->
+
+	<div class="modal__overlay js-overlay m-hidden" id="get-advice">
+		<div class="modal">
+			<button class="modal__close js-modal-close" type="button" name="close"></button>
+			 <p class="modal__title">
+			 	Получить консультацию
+			 </p>
+			 <form action="" class="modal__form js-modal-form">
+			 	<input type="text" class="modal__input" placeholder="Как вас зовут?">
+				<input type="text" class="modal__input" placeholder="Ваш телефон">
+				<button class="modal__btn" type="submit" name="submit">Заказать звонок бесплатно</button>
+				<span class="modal__policies">Отправляя форму, вы даёте согласие на <a href="/" class="modal__link">обработку персональных данных</a></span>
+			 </form>
+		</div>
 	</div>
-	<div class="modal-overlay" id="modal-overlay">
+	<div class="modal__overlay js-overlay m-hidden" id="get-discount">
+		<div class="modal">
+			<button class="modal__close js-modal-close" type="button" name="close"></button>
+			 <p class="modal__title">
+			 	Получить скидку
+			 </p>
+			 <form action="" class="modal__form js-modal-form">
+			 	<input type="text" class="modal__input" placeholder="Как вас зовут?">
+				<input type="text" class="modal__input" placeholder="Ваш телефон">
+				<button class="modal__btn" type="submit" name="submit">Получить консультацию</button>
+				<span class="modal__policies">Отправляя форму, вы даёте согласие на <a href="/" class="modal__link">обработку персональных данных</a></span>
+			 </form>
+		</div>
+	</div>
+	<div class="modal__overlay js-overlay m-hidden" id="about-online">
+		<div class="modal m-large">
+			<button class="modal__close js-modal-close" type="button" name="close"></button>
+			 <p class="modal__title">
+			 	Что такое онлайн сделка<br/>и почему это безопасно?
+			 </p>
+			 <p class="modal__text">
+				Онлайн сделка или электронная сделка, это процесс покупки квартиры, в котором договор долевого участия (ДДУ) подписывается в электронной форме (см. №63ФЗ «Об электронной подписи»). Вам потребуется лишь аналог вышей подписи в цифровом формате – электронная цифровая подпись (ЭЦП). Мы можем выпустить ее для вас в день подписания договора.
+ 			 </p>
+			 <p class="modal__text">
+ 				В течение трех дней вам необходимо внести денежные средства на аккредитивный счет. А это значит, что деньги клиента заблокированы до момента регистрации прав собственности. После чего наш специалист отправит вам пакет документов на подпись с использованием ЭЦП. После подписания пакет документов автоматически отправляется в Росреестр для регистрации.
+			 </p>
+			 <p class="modal__text">
+ 				По завершении регистрации Вы получите электронный пакет зарегистрированных документов. С этого момента вы вступаете в права собственности.
+			 </p>
+			 <p class="modal__text">
+ 				Таким образом, процесс онлайн покупки абсолютно прозрачен и безопасен с юридической точки зрения.
+			 </p>
+			 <button class="modal__btn js-modal-close" type="submit" name="submit">Закрыть</button>
+		</div>
 	</div>
 </body>
 <script src="./build/bundle.js"></script>

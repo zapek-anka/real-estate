@@ -126,15 +126,30 @@ var RealEstate = /*#__PURE__*/function () {
     this.showMore = document.querySelector('.js-show-more');
     this.scrollTop = document.querySelector('.js-go-up');
     this.hiddenItems = _toConsumableArray(document.querySelectorAll('.js-hidden'));
+    this.anchors = _toConsumableArray(document.querySelectorAll('a[href^="#"]'));
+    this.modalClose = _toConsumableArray(document.querySelectorAll('.js-modal-close'));
+    this.openModal = _toConsumableArray(document.querySelectorAll('.js-open-modal'));
     this.showMore.addEventListener('click', this.showHidden.bind(this));
     this.scrollTop.addEventListener('click', this.goUp.bind(this));
-    this.anchors = _toConsumableArray(document.querySelectorAll('a[href^="#"]'));
     this.anchors.forEach(function (anchor) {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
         document.querySelector(this.getAttribute('href')).scrollIntoView({
           behavior: 'smooth'
         });
+      });
+    });
+    this.openModal.forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        var modalId = btn.dataset.modal;
+        var modal = document.getElementById(modalId);
+        modal.classList.remove('m-hidden');
+      });
+    });
+    this.modalClose.forEach(function (close) {
+      close.addEventListener('click', function (e) {
+        close.closest('.js-overlay').classList.add('m-hidden');
       });
     });
   }
