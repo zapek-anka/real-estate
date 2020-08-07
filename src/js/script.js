@@ -1,3 +1,5 @@
+import Swiper from 'swiper/bundle';
+
 class RealEstate {
     constructor() {
         this.showMore = document.querySelector('.js-show-more');
@@ -39,6 +41,13 @@ class RealEstate {
                 close.closest('.js-overlay').classList.add('m-hidden');
                 document.body.classList.remove('no-scroll');
             });
+        });
+
+        let swiper = new Swiper('.swiper-container', {
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
         });
     }
 

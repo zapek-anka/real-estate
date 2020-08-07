@@ -33,7 +33,12 @@
     margin-bottom: 37px;
 
     &.m-hidden {
-        display: none;
+        // display: none;
+        position: absolute;
+        clip: rect(0 0 0 0);
+        width: 1px;
+        height: 1px;
+        margin: -1px;
     }
 
     &__title {
@@ -56,6 +61,11 @@
 
     &__quantity {
         opacity: 1;
+    }
+
+    .modal__slide, .modal__slider {
+        width: 518px;
+        height: 350px;
     }
 }
 
