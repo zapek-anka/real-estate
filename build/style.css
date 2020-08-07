@@ -625,7 +625,7 @@ body {
   margin-left: calc(50vw - 525px);
 }
 .contacts__map {
-  width: 547px;
+  width: calc(50vw - 95px);
   height: 538px;
   background-color: #cecece;
 }
