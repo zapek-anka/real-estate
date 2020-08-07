@@ -121,6 +121,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 var RealEstate = /*#__PURE__*/function () {
   function RealEstate() {
+    var _this = this;
+
     _classCallCheck(this, RealEstate);
 
     this.showMore = document.querySelector('.js-show-more');
@@ -129,6 +131,8 @@ var RealEstate = /*#__PURE__*/function () {
     this.anchors = _toConsumableArray(document.querySelectorAll('a[href^="#"]'));
     this.modalClose = _toConsumableArray(document.querySelectorAll('.js-modal-close'));
     this.openModal = _toConsumableArray(document.querySelectorAll('.js-open-modal'));
+    this.modalTabs = _toConsumableArray(document.querySelectorAll('.js-modal-tab'));
+    this.modalSections = _toConsumableArray(document.querySelectorAll('.js-modal-section'));
     this.showMore.addEventListener('click', this.showHidden.bind(this));
     this.scrollTop.addEventListener('click', this.goUp.bind(this));
     this.anchors.forEach(function (anchor) {
@@ -138,6 +142,9 @@ var RealEstate = /*#__PURE__*/function () {
           behavior: 'smooth'
         });
       });
+    });
+    this.modalTabs.forEach(function (tab) {
+      return tab.addEventListener('click', _this.changeTab.bind(_this));
     });
     this.openModal.forEach(function (btn) {
       btn.addEventListener('click', function (e) {
@@ -157,6 +164,19 @@ var RealEstate = /*#__PURE__*/function () {
   }
 
   _createClass(RealEstate, [{
+    key: "changeTab",
+    value: function changeTab(evt) {
+      this.modalTabs.forEach(function (tab) {
+        tab.classList.remove('m-active');
+      });
+      this.modalSections.forEach(function (section) {
+        section.classList.remove('m-active');
+      });
+      evt.target.classList.add('m-active');
+      var activeSection = document.querySelector('[data-section=' + evt.target.dataset.tab + ']');
+      activeSection.classList.add('m-active');
+    }
+  }, {
     key: "showHidden",
     value: function showHidden() {
       this.hiddenItems.forEach(function (item) {

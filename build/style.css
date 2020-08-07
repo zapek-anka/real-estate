@@ -1122,6 +1122,12 @@ body {
 .modal-section {
   margin-top: 55px;
 }
+.modal-section__content {
+  display: none;
+}
+.modal-section__content.m-active {
+  display: block;
+}
 .modal-section__title {
   margin: 0 0 25px;
   font-weight: 500;

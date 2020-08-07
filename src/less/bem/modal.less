@@ -351,6 +351,14 @@ body {
 .modal-section {
     margin-top: 55px;
 
+    &__content {
+        display: none;
+
+        &.m-active {
+            display: block;
+        }
+    }
+
     &__title {
         margin: 0 0 25px;
         font-weight: 500;

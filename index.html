@@ -647,12 +647,12 @@
 				 <div class="modal-section">
 					<h2 class="modal-section__title">Выбрать квартиру в ЖК</h2>
 					<ul class="modal-section__tabs">
-						<li class="modal-section__tab m-active">Студия</li>
-						<li class="modal-section__tab">1-комнатная</li>
-						<li class="modal-section__tab">2-комнатная</li>
-						<li class="modal-section__tab">3-комнатная</li>
+						<li data-tab="studio" class="modal-section__tab js-modal-tab m-active">Студия</li>
+						<li data-tab="one-room" class="modal-section__tab js-modal-tab">1-комнатная</li>
+						<li data-tab="two-rooms" class="modal-section__tab js-modal-tab">2-комнатная</li>
+						<li data-tab="three-rooms" class="modal-section__tab js-modal-tab">3-комнатная</li>
 					</ul>
-					<div class="modal-section__content">
+					<div class="modal-section__content js-modal-section m-active" data-section="studio">
 						<div class="modal-section__item">
 							<div class="modal-section__left">
 								<div class="modal-section__img-wrap">
@@ -695,6 +695,9 @@
 							</div>
 						</div>
 					</div>
+					<div class="modal-section__content js-modal-section" data-section="one-room"></div>
+					<div class="modal-section__content js-modal-section" data-section="two-rooms"></div>
+					<div class="modal-section__content js-modal-section" data-section="three-rooms"></div>
 				 </div>
 			</div>
 		</div>

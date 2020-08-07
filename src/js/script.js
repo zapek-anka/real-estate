@@ -6,6 +6,8 @@ class RealEstate {
         this.anchors = [...document.querySelectorAll('a[href^="#"]')];
         this.modalClose = [...document.querySelectorAll('.js-modal-close')];
         this.openModal = [...document.querySelectorAll('.js-open-modal')];
+        this.modalTabs = [...document.querySelectorAll('.js-modal-tab')];
+        this.modalSections = [...document.querySelectorAll('.js-modal-section')];
 
         this.showMore.addEventListener('click', this.showHidden.bind(this));
         this.scrollTop.addEventListener('click', this.goUp.bind(this));
@@ -19,6 +21,8 @@ class RealEstate {
                 });
             });
         });
+
+        this.modalTabs.forEach((tab) => tab.addEventListener('click', this.changeTab.bind(this)));
 
         this.openModal.forEach((btn) => {
             btn.addEventListener('click', function (e) {
@@ -36,6 +40,18 @@ class RealEstate {
                 document.body.classList.remove('no-scroll');
             });
         });
+    }
+
+    changeTab(evt) {
+        this.modalTabs.forEach((tab) => {
+            tab.classList.remove('m-active');
+        })
+        this.modalSections.forEach((section) => {
+            section.classList.remove('m-active');
+        })
+        evt.target.classList.add('m-active');
+        let activeSection = document.querySelector('[data-section=' + evt.target.dataset.tab + ']');
+        activeSection.classList.add('m-active');
     }
 
     showHidden() {
