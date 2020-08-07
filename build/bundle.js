@@ -156,13 +156,19 @@ var RealEstate = /*#__PURE__*/function () {
         var modalId = btn.dataset.modal;
         var modal = document.getElementById(modalId);
         modal.classList.remove('m-hidden');
-        document.body.classList.add('no-scroll');
+
+        if (modalId == 'flats') {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        } // document.body.classList.add('no-scroll');
+
       });
     });
     this.modalClose.forEach(function (close) {
       close.addEventListener('click', function (e) {
-        close.closest('.js-overlay').classList.add('m-hidden');
-        document.body.classList.remove('no-scroll');
+        close.closest('.js-overlay').classList.add('m-hidden'); // document.body.classList.remove('no-scroll');
       });
     });
     var swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.swiper-container', {
