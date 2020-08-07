@@ -135,6 +135,7 @@ var RealEstate = /*#__PURE__*/function () {
     this.anchors = _toConsumableArray(document.querySelectorAll('a[href^="#"]'));
     this.modalClose = _toConsumableArray(document.querySelectorAll('.js-modal-close'));
     this.openModal = _toConsumableArray(document.querySelectorAll('.js-open-modal'));
+    this.openClose = _toConsumableArray(document.querySelectorAll('.js-close-open'));
     this.modalTabs = _toConsumableArray(document.querySelectorAll('.js-modal-tab'));
     this.modalSections = _toConsumableArray(document.querySelectorAll('.js-modal-section'));
     this.showMore.addEventListener('click', this.showHidden.bind(this));
@@ -164,6 +165,15 @@ var RealEstate = /*#__PURE__*/function () {
           });
         } // document.body.classList.add('no-scroll');
 
+      });
+    });
+    this.openClose.forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        var flats = document.getElementById('flats');
+        var discount = document.getElementById('get-discount');
+        flats.classList.add('m-hidden');
+        discount.classList.remove('m-hidden');
       });
     });
     this.modalClose.forEach(function (close) {

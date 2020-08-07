@@ -8,6 +8,7 @@ class RealEstate {
         this.anchors = [...document.querySelectorAll('a[href^="#"]')];
         this.modalClose = [...document.querySelectorAll('.js-modal-close')];
         this.openModal = [...document.querySelectorAll('.js-open-modal')];
+        this.openClose = [...document.querySelectorAll('.js-close-open')];
         this.modalTabs = [...document.querySelectorAll('.js-modal-tab')];
         this.modalSections = [...document.querySelectorAll('.js-modal-section')];
 
@@ -37,6 +38,16 @@ class RealEstate {
                     window.scrollTo({top: 0, behavior: 'smooth'});
                 }
                 // document.body.classList.add('no-scroll');
+            });
+        });
+
+        this.openClose.forEach((btn) => {
+            btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                let flats = document.getElementById('flats');
+                let discount = document.getElementById('get-discount');
+                flats.classList.add('m-hidden');
+                discount.classList.remove('m-hidden');
             });
         });
 
