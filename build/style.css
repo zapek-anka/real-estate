@@ -23,6 +23,9 @@ body.no-scroll {
   box-shadow: 0px 12px 40px rgba(12, 20, 61, 0.23);
   border-radius: 50%;
 }
+.scroll-top:focus {
+  outline: 0;
+}
 .scroll-top::after {
   content: '';
   position: absolute;
@@ -60,6 +63,14 @@ body.no-scroll {
 .nav__item:last-of-type {
   margin-right: 0;
 }
+.header {
+  background-color: white;
+  position: fixed;
+  z-index: 5;
+  display: flex;
+  width: 100%;
+  top: 0;
+}
 .header__content {
   padding: 25px 0;
   display: flex;
@@ -91,6 +102,7 @@ body.no-scroll {
   opacity: 0.5;
 }
 .initial {
+  padding-top: 81px;
   overflow-x: hidden;
   height: 768px;
 }
@@ -1092,6 +1104,7 @@ body {
   color: #2A353D;
 }
 .modal-location__item {
+  display: block;
   margin: 0 0 4px;
   position: relative;
   font-size: 14px;
@@ -1197,6 +1210,8 @@ body {
 }
 .modal-section__content.m-active {
   display: block;
+  height: 450px;
+  overflow-y: auto;
 }
 .modal-section__title {
   margin: 0 0 25px;
